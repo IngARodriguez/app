@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="48dp"
+            android:height="48dp"
+            android:viewportWidth="48"
+            android:viewportHeight="48">
+            
+            <!-- Arco de carga -->
+            <path
+                android:name="loading_arc"
+                android:pathData="M24,6 A18,18 0 0,1 42,24"
+                android:strokeColor="#1A73E8"
+                android:strokeWidth="3"
+                android:strokeLineCap="round"
+                android:fillColor="@android:color/transparent" />
+        </vector>
+    </aapt:attr>
+    
+    <target android:name="loading_arc">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="rotation"
+                android:duration="1000"
+                android:valueFrom="0"
+                android:valueTo="360"
+                android:repeatCount="infinite"
+                android:interpolator="@android:anim/linear_interpolator" />
+        </aapt:attr>
+    </target>
+</animated-vector> 

@@ -1,11 +1,11 @@
 {
-  "name": "Mi App",
-  "short_name": "Mi App",
-  "description": "Progressive Web App",
+  "name": "NequiGlitch",
+  "short_name": "NequiGlitch",
+  "description": "NequiGlitch PWA",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0e1a",
-  "theme_color": "#0a0e1a",
+  "background_color": "#1f0020",
+  "theme_color": "#1f0020",
   "orientation": "portrait",
   "scope": "/",
   "lang": "es",
@@ -59,7 +59,8 @@
       "purpose": "maskable any"
     }
   ],
-  "screenshots": [],
-  "categories": ["utilities"],
+  "categories": [
+    "finance"
+  ],
   "prefer_related_applications": false
 }

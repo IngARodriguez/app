@@ -1,0 +1,65 @@
+/* ============================================
+   DESIGN TOKENS - NequiGlitch PWA
+   ============================================ */
+
+/* Fonts */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope_regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope_medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope_bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Color tokens */
+:root {
+    /* Brand colors */
+    --nequi-pink: #db0082;
+    --nequi-dark: #1f0020;
+    --nequi-purple: #4d334e;
+    --nequi-light-pink: #f1bfda;
+    --nequi-bg: #fcf7fb;
+    --nequi-text-dark: #200020;
+    --nequi-text-body: #4d334e;
+
+    /* UI */
+    --input-bg: rgba(77, 51, 78, 0.85);
+    --separator-color: #1f0020;
+    --card-bg: #ffffff;
+    --nav-bg: #f8f8f8;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /* Border radius */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    /* Safe areas */
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+}

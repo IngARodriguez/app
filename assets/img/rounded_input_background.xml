@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado cuando el contenedor está activado (cuando el EditText tiene focus) -->
+    <item android:state_activated="true">
+        <shape>
+            <solid android:color="#fcf7fb" />
+            <corners android:radius="4dp" />
+            <stroke android:width="0dp" android:color="#ff3e60" />
+        </shape>
+    </item>
+    
+    <!-- Estado normal -->
+    <item>
+        <shape>
+            <solid android:color="#fcf7fb" />
+            <corners android:radius="4dp" />
+            <stroke android:width="0dp" android:color="#e0e0e0" />
+        </shape>
+    </item>
+</selector> 
