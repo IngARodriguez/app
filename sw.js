@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nequiglitch-v1';
+const CACHE_NAME = 'nequiglitch-v6';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

@@ -157,6 +157,21 @@ const App = {
         // In a full app, this would switch sub-views
     },
 
+    copyClave() {
+        const val = document.getElementById('clave-valor');
+        if (!val) return;
+        const code = val.textContent;
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.querySelector('.clave-copy-btn');
+                if (btn) {
+                    btn.style.opacity = '0.4';
+                    setTimeout(() => { btn.style.opacity = ''; }, 600);
+                }
+            }).catch(() => { });
+        }
+    },
+
     noop() {
         // Placeholder for future functionality
     },
